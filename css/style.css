@@ -1,0 +1,813 @@
+:root {
+    --main-color: #ef4da2;
+    --secondary-color: #b59274;
+    --font-base-color: #1a1a1a;
+    --font-secondary-color: #9a9a9a;
+    --font-del-color: #d3d3d3;
+    --section-title-size: 6rem;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Outfit", "Suit", sans-serif;
+    font-size: 1.6rem;
+    color: var(--font-base-color);
+}
+
+.wide-inner {
+    margin: 0 2.5%;
+    background: rgba(255, 0, 0, 0.1);
+    position: relative;
+}
+
+.inner {
+    max-width: 1680px;
+    padding: 0 2.5%;
+    background: rgba(0, 0, 255, 0.1);
+    margin: 0 auto;
+}
+
+/* header */
+header {
+    background: var(--main-color);
+    height: 7rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+.logo {
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+
+    img {
+        display: block;
+    }
+}
+
+.header-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.main-menu {
+    display: flex;
+    gap: 2.4rem;
+
+    >li {
+        /* background-color: green; */
+        position: relative;
+
+        a {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #fff;
+            line-height: 7rem;
+
+
+        }
+    }
+}
+
+.main-menu::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0px;
+    background: var(--main-color);
+    position: fixed;
+    left: 0;
+    top: 70px;
+    transition: 0.5s;
+
+}
+
+.main-menu:hover:before {
+    height: 120px;
+}
+
+/* 서브메뉴를 1개씩 볼떄 */
+.main-menu>li:hover .depth1 {
+    display: block;
+    height: 120px;
+}
+
+/* 서브메뉴를 전부 볼때 */
+/* .main-menu:hover .depth1{
+    display: block;
+    height: 120px;
+} */
+
+/* 서브메뉴 배경이 100%인 경우 header fixed일때 사용할 것 */
+
+.depth1 {
+    /* display: none; */
+    /* background: aqua; */
+    position: absolute;
+    /* border:1px solid black; */
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+
+}
+
+.header-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 7rem;
+    gap: 3rem;
+}
+
+.header-right ul {
+    display: flex;
+    gap: 2.4rem;
+}
+
+.header-right>ul>li {
+    position: relative;
+    /* background-color: aqua; */
+    line-height: 70PX;
+}
+
+.header-right>ul>li>a {
+    color: #fff;
+    font-weight: 600;
+    font-size: 2rem;
+
+}
+
+
+
+.header-right .depth1 {
+    display: none;
+    height: auto;
+    padding: 12px 20px 12px 12px;
+    border-radius: 10px;
+    border: 1px solid #d3d3d3;
+    background: #fff;
+    line-height: 2;
+    font-size: 1.4rem;
+    top: 55px;
+}
+
+.header-right>ul>li:hover .depth1 {
+    display: block;
+}
+
+.gnb-icon .cart-count {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #ef4f11;
+    line-height: 2rem;
+    font-size: 1rem;
+    right: -10px;
+    top: 15px;
+
+}
+
+
+/* main */
+.main-slider-wrap {
+    position: relative;
+}
+
+.main-slider {
+    position: relative;
+}
+
+.main-slider>div {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0 0 30px 50px;
+    overflow: hidden;
+}
+
+.main-slider>div>div {}
+
+.main-slider>.slider1 {
+    background: #bc0a2c;
+}
+
+.main-slider>.slider2 {
+    background: #e14337
+}
+
+.main-slider>.slider3 {
+    background: #fcb8c8;
+}
+
+.main-slider>.slider4 {
+    background: #b3c5ec;
+}
+
+.main-slider>.active {
+    position: relative;
+    z-index: 100;
+}
+
+.main-slider>div>div {
+    flex: 1;
+}
+
+.main-slider>div .img-box img {
+    width: 100%;
+}
+
+.main-slider>div .text-box {
+    text-align: center;
+    display: flex;
+    /* flex기본은 옆으로 붙이는건데 플렉스 다이렉션 컬럼으로 방향을 바꾸면 위아래 위치조절이 된다 */
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+.main-slider>div .text-box .slider-title {
+    font-size: 6rem;
+}
+
+.main-slider>div .text-box .explication {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.main-slider>div .text-box .shop-now-btn>a {
+    display: inline-block;
+    background: #fff;
+    padding: 2rem 4rem;
+    border-radius: 50px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.main-slider-wrap .slider-pager {
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
+    display: flex;
+    gap: 30px;
+    width: 50%;
+    z-index: 1000;
+    justify-content: center;
+}
+
+.slider-pager>li {}
+
+.slider-pager>li>a {
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 20px;
+    background: #fff;
+    opacity: 0.7;
+    text-indent: -9999px;
+}
+
+.slider-pager>.active>a {
+    width: 6.4rem;
+    opacity: 1;
+}
+
+.container {
+    margin-top: 16rem;
+}
+
+.container section {
+    margin: 0 0 16rem;
+}
+
+.container .section-title {
+    font-size: 6rem;
+    text-align: center;
+    color: var(--main-color);
+    margin-bottom: 6rem;
+}
+
+.category-wrap {}
+
+.category-list {
+    display: flex;
+    gap: 40px;
+}
+
+.category-list>div {
+    flex: 1;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.category-list>div .img-box {
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.category-list>div .img-box img {
+    width: 100%;
+}
+
+.category-list>div:hover .img-box img {
+    opacity: 0.2;
+    transform: scale(1.2);
+}
+
+.make-your-wrap {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.make-your-wrap .make-your {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5f6f6+0,dbdce2+21,b8bac6+49,dddfe3+80,f5f6f6+100;Grey+Pipe */
+    background: linear-gradient(45deg, rgba(245, 246, 246, 1) 0%, rgba(219, 220, 226, 1) 21%, rgba(184, 186, 198, 1) 49%, rgba(221, 223, 227, 1) 80%, rgba(245, 246, 246, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
+
+.make-your-wrap .make-your .text-box {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.make-tour .text-box {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; */
+}
+
+.make-your .text-box,
+.slider-title {
+    font-size: 6rem;
+    margin: 20px 0 50px;
+    text-shadow: 10px 20px 20px rgba(0, 0, 0, 0.3);
+    font-weight: 900;
+}
+
+.make-your .text-box .shop-now-btn {
+    background: var(--font-base-color);
+    padding: 2rem 3.6rem;
+    border-radius: 5rem;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+.loved-by-wrap {}
+
+.loved-by-wrap>div>div .num{
+    font-size: 6.4rem;
+    font-weight: 700;
+    position: absolute;
+    z-index: 999;
+    top:0;
+    left: 2.4rem;
+    transform: translateY(-50%);
+}
+.loved-by-wrap>div>.loved-by-list-top .num{
+    color:var(--main-color);
+}
+.loved-by-list-top,
+.loved-by-list-bottom {
+    display: flex;
+    gap: 4rem;
+}
+
+.loved-by-list-top .loved, .loved-by-list-bottom .loved{
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.loved .text-box {
+    padding: 3rem 2rem;
+
+}
+
+.loved .text-box .price-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loved .text-box .price {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.loved .text-box .sale {
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.loved .text-box span {
+    color: #9a9a9a;
+    text-decoration: line-through;
+}
+
+/* new-in */
+.new-in-wrap {
+    background: rgb(141, 182, 243);
+    padding: 10rem 0;
+    font-size: 1.6rem;
+    color: #fff;
+    position: relative;
+}
+
+.new-in-wrap .section-title {
+    color: #01a799;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.new-in-wrap .section-sub-title {
+    font-size: 3.6rem;
+    font-weight: 900;
+}
+
+.new-in-wrap .sub-title {
+    font-size: 3.6rem;
+    font-weight: 800;
+}
+
+.new-in-wrap .outline-title {
+    font-size: 10rem;
+    font-weight: 900;
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    margin-bottom: 100px;
+}
+
+.new-in-wrap .new-item-img {
+    position: absolute;
+    width: 47%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    /* 위치이동후 트랜스폼 마이너스를 주면 가운데가 되나 PC한정
+    모바일이나 아이패드용으로 @미디어시는 문제가 생기므로
+    transform: translateY(0);를 부여해서 초기화 한다
+     */
+
+    img {
+        width: 100%;
+    }
+}
+
+.new-in-wrap .item-describe {
+    font-size: 2.4rem;
+    font-weight: 900;
+    margin: 7rem 0 2rem;
+}
+
+.new-in-wrap .shop-now-btn>a {
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    text-align: center;
+    padding: 1.6rem 5rem;
+    margin: 50px 0 0;
+}
+
+.new-in-wrap .shop-now-btn>a p {
+    /* border:1px solid black; */
+    overflow: hidden;
+}
+
+.new-in-wrap .shop-now-btn>a span {
+    position: relative;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.new-in-wrap .shop-now-btn>a span::after {
+    content: "Shop Now";
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.new-in-wrap .shop-now-btn>a:hover span {
+    transform: translateY(-100%);
+}
+
+.arrow-btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.arrow-btn>li>a {
+    background: #555;
+    display: flex;
+    padding: 10px 24px;
+    border-radius: 50px;
+}
+
+.arrow-btn>li>a img {
+    width: 32px;
+    transition: 0.3s;
+}
+
+.arrow-btn>li:first-child>a:hover img {
+    transform: translateX(-10px);
+}
+
+.arrow-btn>li:last-child>a:hover img {
+    transform: translateX(10px);
+}
+
+
+.tab-menu-list {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    font-size: 2.4rem;
+    color: #777;
+    font-weight: 600;
+}
+
+.tab-menu-list>.active {
+    color: var(--main-color);
+    position: relative;
+}
+
+.tab-menu-list>.active::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: var(--main-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: -6px;
+}
+
+.sunshade-list {
+    display: flex;
+    gap: 4rem;
+}
+
+.sunshade-list>div {}
+
+/* .sunshade-list .img-box,
+.loved-by-list-top .img-box, 
+.loved-by-list-bottom .img-box {
+    position: relative;
+    border-radius: 3rem;
+    overflow: hidden;
+    background: #fff;    
+} */
+
+.loved .img-box {
+    position: relative;
+    border-radius: 3rem;
+    overflow: hidden;
+    background: #fff;
+
+}
+
+.sunshade-list .img-box .hover-img,
+.loved-by-list-top .img-box .hover-img,
+.loved-by-list-bottom .img-box .hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.sunshade-list .img-box:hover .hover-img,
+.loved-by-list-top .img-box:hover .hover-img,
+.loved-by-list-bottom .img-box:hover .hover-img {
+    opacity: 1;
+}
+
+
+/* .loved-by-wrap .img-box .heart-icon .active>a,
+.sunshade-list .img-box .heart-icon>a { */
+.loved .img-box .heart-icon a {
+    position: absolute;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/heart.png);
+    top: 4rem;
+    right: 3rem;
+}
+
+/* .loved-by-wrap .img-box .heart-icon .active>a,
+.sunshade-list .img-box .heart-icon.active { */
+.loved .img-box .heart-icon.active a {
+    background-image: url(../images/heart_pink.png);
+}
+
+.sunshade-list .text-box {
+    padding: 3rem, 2rem;
+    font-size: 1.8rem;
+}
+
+/* .sunshade-list .text-box>p{
+    font-weight: 700;
+}
+.sunshade-list .text-box .price-wrap{
+    display: flex;
+    justify-content:space-between;
+    margin: 1rem 0;
+}
+.sunshade-list .text-box .price-wrap span{
+text-decoration: line-through;
+} */
+.sunshade-list .text-box .price-wrap .sale {
+    color: var(--main-color);
+}
+
+.catalogue-wrap {}
+
+.catalogue-list {
+    display: flex;
+    gap: 4rem;
+}
+
+.catalogue-list>div {}
+
+.catalogue-list>div .big-img {
+    border-radius: 4rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.catalogue-list>div .big-img>img {
+    /* width: 100%; */
+}
+
+.catalogue-list>div .big-img>.more-plus-btn {
+    position: absolute;
+}
+
+.catalogue-list>.cata1 .big-img>.more-plus-btn:first-of-type {
+    top: 300px;
+    left: 50px;
+    ;
+
+}
+
+.catalogue-list>.cata1 .big-img>.more-plus-btn:nth-of-type(2) {
+    top: 130px;
+    left: 310px;
+    ;
+
+}
+
+.catalogue-list>.cata1 .big-img>.more-plus-btn:nth-of-type(3) {
+    top: 430px;
+    left: 310px;
+    ;
+
+}
+
+.catalogue-list>.cata2 .big-img>.more-plus-btn:first-of-type {
+    top: 300px;
+    left: 50px;
+    ;
+
+}
+
+.catalogue-list>.cata2 .big-img>.more-plus-btn:nth-of-type(2) {
+    top: 130px;
+    left: 310px;
+    ;
+
+}
+
+.catalogue-list>.cata2 .big-img>.more-plus-btn:nth-of-type(3) {
+    top: 430px;
+    left: 310px;
+    ;
+
+}
+
+.catalogue-list>div .thumb-img {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.catalogue-list>div .thumb-img>p {
+    width: 35%;
+    border-radius: 20px;
+    background: #fff;
+
+}
+
+/* .loved .text-box{}
+
+.loved .text-box .price-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loved .text-box .price{
+display: flex;
+gap:10px;
+margin-top: 10px;
+}
+
+.loved .text-box .sale{
+    font-weight: 600;
+    color:var(--main-color);
+}
+.loved .text-box span{
+    color:#9a9a9a;
+    text-decoration: line-through;
+} */
+
+/* footer */
+footer {
+    background: #b59274;
+    padding: 50px 0;
+    color: white;
+}
+
+.footer-top,
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 200px;
+}
+
+.footer-top .company-info h2 {
+    font-size: 1rem;
+}
+
+.company-info address {
+    font-size: 12px;
+    margin: 20px 0 0;
+    line-height: 1.8;
+}
+
+.company-info address span {
+    margin-right: 20px;
+}
+
+.footer-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    column-gap: 50px;
+}
+
+.footer-menu>li {
+    width: 30%;
+}
+
+.pp a {
+    color: var(--color-primary);
+}
+
+.footer-bottom {
+    margin-top: 100px;
+}
+
+.sns-list {
+    display: flex;
+    align-items: center;
+}
+
+.sns-list>.es-mark img {
+    height: 32px;
+}
