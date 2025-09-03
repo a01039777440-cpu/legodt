@@ -15,18 +15,19 @@ body {
     font-family: "Outfit", "Suit", sans-serif;
     font-size: 1.6rem;
     color: var(--font-base-color);
+    background: #f3f3f3;
 }
 
 .wide-inner {
     margin: 0 2.5%;
-    background: rgba(255, 0, 0, 0.1);
+    /* background: rgba(255, 0, 0, 0.1); */
     position: relative;
 }
 
 .inner {
     max-width: 1680px;
     padding: 0 2.5%;
-    background: rgba(0, 0, 255, 0.1);
+    /* background: rgba(0, 0, 255, 0.1); */
     margin: 0 auto;
 }
 
@@ -36,7 +37,7 @@ header {
     height: 7rem;
     position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 10000;
 }
 
 
@@ -344,6 +345,7 @@ header {
 }
 
 .make-your-wrap .make-your {
+    position: relative;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5f6f6+0,dbdce2+21,b8bac6+49,dddfe3+80,f5f6f6+100;Grey+Pipe */
     background: linear-gradient(45deg, rgba(245, 246, 246, 1) 0%, rgba(219, 220, 226, 1) 21%, rgba(184, 186, 198, 1) 49%, rgba(221, 223, 227, 1) 80%, rgba(245, 246, 246, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -385,25 +387,28 @@ header {
 
 .loved-by-wrap {}
 
-.loved-by-wrap>div>div .num{
+.loved-by-wrap>div>div .num {
     font-size: 6.4rem;
     font-weight: 700;
     position: absolute;
     z-index: 999;
-    top:0;
+    top: 0;
     left: 2.4rem;
     transform: translateY(-50%);
 }
-.loved-by-wrap>div>.loved-by-list-top .num{
-    color:var(--main-color);
+
+.loved-by-wrap>div>.loved-by-list-top .num {
+    color: var(--main-color);
 }
+
 .loved-by-list-top,
 .loved-by-list-bottom {
     display: flex;
     gap: 4rem;
 }
 
-.loved-by-list-top .loved, .loved-by-list-bottom .loved{
+.loved-by-list-top .loved,
+.loved-by-list-bottom .loved {
     position: relative;
     margin-bottom: 4rem;
 }
@@ -577,7 +582,7 @@ header {
 
 .sunshade-list {
     display: flex;
-    gap: 4rem;
+    gap: 4rem;    
 }
 
 .sunshade-list>div {}
